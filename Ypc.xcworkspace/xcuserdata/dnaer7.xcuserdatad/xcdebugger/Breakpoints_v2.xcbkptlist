@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ypc/Controller/Home/HomeController.m"
-            timestampString = "566394538.792832"
+            timestampString = "566450375.511363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-setViewcontroller"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-setLayout"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ypc/Controller/Home/HomeController.m"
-            timestampString = "566394538.792919"
+            filePath = "Ypc/Controller/Home/Child/RecommendController.m"
+            timestampString = "566450375.511444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-setLayout"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-requestBannerData"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RecommendController requestBannerData]"
+                  moduleName = "Ypc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnaer7/Documents/%E5%85%AC%E5%8F%B8/Ypc/Ypc/Controller/Home/Child/RecommendController.m"
+                  timestampString = "566450104.58059"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "444">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[RecommendController requestBannerData]_block_invoke"
+                  moduleName = "Ypc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnaer7/Documents/%E5%85%AC%E5%8F%B8/Ypc/Ypc/Controller/Home/Child/RecommendController.m"
+                  timestampString = "566450104.584964"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "Ypc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dnaer7/Documents/%E5%85%AC%E5%8F%B8/Ypc/Ypc/Controller/Home/Child/RecommendController.m"
+                  timestampString = "566450104.5907511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

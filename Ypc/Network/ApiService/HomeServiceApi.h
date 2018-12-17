@@ -10,10 +10,14 @@
 #import "BaseApi.h"
 #import "BaseModelReq.h"
 #import "StairCategoryRes.h"
+#import "HomeReq.h"
+#import "ZXBannerData.h"
 
 @interface HomeServiceApi : BaseApi
 + (instancetype)share;
 ///分类列表
 -(void)getSortListWithParam:(BaseModelReq *) req response:(responseModel) responseModel;
+///banner列表
+-(void)getBannerListWithParam:(HomeReq *) req response:(responseModel) responseModel;
 
 @end

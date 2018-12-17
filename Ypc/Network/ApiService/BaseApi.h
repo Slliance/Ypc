@@ -12,8 +12,9 @@
 #import "ZSConfig.h"
 
 ///分类列表
-#define sort_list          @"/ypc/product/category/mobile/v1/list/index"
-
+#define sort_list      @"/ypc/product/category/mobile/v1/list/index"
+///首页banner
+#define banner_home   @"/ypc/subject/mobile/v1/list"
 
 typedef void(^responseModel)(id response);
 @interface BaseApi : NSObject

@@ -14,6 +14,8 @@
 #import "KKClassificationView.h"
 #import "HoneNavView.h"
 
+
+
 #import "HomeServiceApi.h"
 
 @interface HomeController ()
@@ -23,13 +25,15 @@
 @property(strong, nonatomic) KKClassificationView *managerView;
 @property(strong, nonatomic) NSMutableArray *viewControllers;
 @property(strong, nonatomic)HoneNavView*navView;
+
+
 @end
 
 @implementation HomeController
 -(HoneNavView *)navView{
     if (!_navView) {
         _navView = [[HoneNavView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, [self navHeightWithHeight])];
-        _navView.backgroundColor = [UIColor colorWithRed:50/255.0 green:50/255.0 blue:50/255.0 alpha:1];
+        _navView.backgroundColor = [UIColor colorWithRed:50/255.0f green:50/255.0f blue:50/255.0f alpha:1];
     }
     return _navView;
 }
@@ -39,6 +43,7 @@
     self.titleArr = [[NSMutableArray alloc]init];
     self.sortArr = [[NSMutableArray alloc]init];
     [self.view addSubview:self.navView];
+    
     [self requestSortData];
 }
 -(void)requestSortData{
@@ -83,14 +88,17 @@
     _layout.titleSelectFont = [UIFont boldSystemFontOfSize:16];
     _layout.titles = self.titleArr;
     _layout.viewControllers = self.viewControllers;
-    _layout.LinkColor = [UIColor whiteColor];
+    _layout.LinkColor = DSColorFromHex(0x323232);
     _layout.linkHeight = 0.5;
     _layout.bottomLineHeight = 2;
     _layout.bottomLineWidth = 30;
     _layout.bottomLineColor = [UIColor whiteColor];
     if (!_managerView) {
         _managerView = [[KKClassificationView alloc]initWithFrame:CGRectMake(0,[self navHeightWithHeight], SCREENWIDTH, SCREENHEIGHT-[self navHeightWithHeight]) viewController:self layout:self.layout clickBlock:^(NSInteger index) {
-            
+            if (index ==0) {
+                RecommendController *controller = self.viewControllers[index];
+                [controller setIndex:index];
+            }
         }];
         [self.view addSubview:self.managerView];
     }
@@ -108,12 +116,20 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+   
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.hidden = NO;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        
+        
+    }
+    return self;
+}
 
 
 

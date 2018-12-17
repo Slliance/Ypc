@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6AD30646D229F7A33C8A2BF6 /* libPods-Ypc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3507AC265EDCDC30C4DF20 /* libPods-Ypc.a */; };
+		89CA690E21C34A5E00BC454A /* HomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA690D21C34A5E00BC454A /* HomeHeadView.m */; };
+		89CA691621C3501A00BC454A /* ZXBannerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA691121C3501A00BC454A /* ZXBannerImageView.m */; };
+		89CA691721C3501A00BC454A /* ZXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA691221C3501A00BC454A /* ZXBannerView.m */; };
+		89CA691821C3501A00BC454A /* ZXBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA691421C3501A00BC454A /* ZXBannerData.m */; };
+		89CA691B21C3527E00BC454A /* HomeReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA691A21C3527E00BC454A /* HomeReq.m */; };
 		89D8068621BF44A500A6A31F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D8068521BF44A500A6A31F /* AppDelegate.m */; };
 		89D8068921BF44A500A6A31F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D8068821BF44A500A6A31F /* ViewController.m */; };
 		89D8068C21BF44A500A6A31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D8068A21BF44A500A6A31F /* Main.storyboard */; };
@@ -249,6 +254,16 @@
 /* Begin PBXFileReference section */
 		03D7DA5987537B4F31A53EC5 /* Pods-Ypc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ypc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ypc/Pods-Ypc.debug.xcconfig"; sourceTree = "<group>"; };
 		70529E4AFF51C8E344A289E6 /* Pods-Ypc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ypc.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ypc/Pods-Ypc.release.xcconfig"; sourceTree = "<group>"; };
+		89CA690C21C34A5E00BC454A /* HomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeadView.h; sourceTree = "<group>"; };
+		89CA690D21C34A5E00BC454A /* HomeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeadView.m; sourceTree = "<group>"; };
+		89CA691021C3501900BC454A /* ZXBannerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBannerImageView.h; sourceTree = "<group>"; };
+		89CA691121C3501A00BC454A /* ZXBannerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBannerImageView.m; sourceTree = "<group>"; };
+		89CA691221C3501A00BC454A /* ZXBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBannerView.m; sourceTree = "<group>"; };
+		89CA691321C3501A00BC454A /* ZXBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBannerView.h; sourceTree = "<group>"; };
+		89CA691421C3501A00BC454A /* ZXBannerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXBannerData.m; sourceTree = "<group>"; };
+		89CA691521C3501A00BC454A /* ZXBannerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBannerData.h; sourceTree = "<group>"; };
+		89CA691921C3527E00BC454A /* HomeReq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeReq.h; sourceTree = "<group>"; };
+		89CA691A21C3527E00BC454A /* HomeReq.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeReq.m; sourceTree = "<group>"; };
 		89D8068121BF44A500A6A31F /* Ypc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ypc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D8068421BF44A500A6A31F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		89D8068521BF44A500A6A31F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -582,6 +597,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89CA690F21C34FF400BC454A /* CycleScrollow */ = {
+			isa = PBXGroup;
+			children = (
+				89CA691521C3501A00BC454A /* ZXBannerData.h */,
+				89CA691421C3501A00BC454A /* ZXBannerData.m */,
+				89CA691021C3501900BC454A /* ZXBannerImageView.h */,
+				89CA691121C3501A00BC454A /* ZXBannerImageView.m */,
+				89CA691321C3501A00BC454A /* ZXBannerView.h */,
+				89CA691221C3501A00BC454A /* ZXBannerView.m */,
+			);
+			path = CycleScrollow;
+			sourceTree = "<group>";
+		};
 		89D8067821BF44A500A6A31F = {
 			isa = PBXGroup;
 			children = (
@@ -1164,8 +1192,11 @@
 		89EF695D21C25953007F74D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89CA690F21C34FF400BC454A /* CycleScrollow */,
 				89EF696921C26B2E007F74D0 /* HoneNavView.h */,
 				89EF696A21C26B2E007F74D0 /* HoneNavView.m */,
+				89CA690C21C34A5E00BC454A /* HomeHeadView.h */,
+				89CA690D21C34A5E00BC454A /* HomeHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1186,6 +1217,8 @@
 			children = (
 				89EF696821C261CD007F74D0 /* StairCategoryRes.h */,
 				89EF696621C261BB007F74D0 /* StairCategoryRes.m */,
+				89CA691921C3527E00BC454A /* HomeReq.h */,
+				89CA691A21C3527E00BC454A /* HomeReq.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1558,15 +1591,19 @@
 				89DDD5DB21C0B08A0026BBBE /* MineServiceApi.m in Sources */,
 				89DDD4E221C0A8880026BBBE /* NSString+MD5Addition.m in Sources */,
 				89DDD5A321C0B08A0026BBBE /* UserBaseInfoModel.m in Sources */,
+				89CA691821C3501A00BC454A /* ZXBannerData.m in Sources */,
 				89DDD5D821C0B08A0026BBBE /* HomeServiceApi.m in Sources */,
 				89EF696121C259CB007F74D0 /* RecommendController.m in Sources */,
 				89DDD4E721C0A8880026BBBE /* UIImage+RoundedCorner.m in Sources */,
 				89D807EE21BFCD1500A6A31F /* UITextView+Category.m in Sources */,
 				89EF696421C259DD007F74D0 /* HomeChildController.m in Sources */,
+				89CA691621C3501A00BC454A /* ZXBannerImageView.m in Sources */,
 				89DDD4E821C0A8880026BBBE /* UIImage+Resize.m in Sources */,
 				89DDD5DC21C0B08A0026BBBE /* NSArray+TYAFNetworking.m in Sources */,
 				89D807FE21BFCD2500A6A31F /* UIColor+VmExt.m in Sources */,
+				89CA690E21C34A5E00BC454A /* HomeHeadView.m in Sources */,
 				89D807F321BFCD1500A6A31F /* IMEmotionEntity.m in Sources */,
+				89CA691721C3501A00BC454A /* ZXBannerView.m in Sources */,
 				89DDD4E921C0A8880026BBBE /* UIDevice+IdentifierAddition.m in Sources */,
 				89DDD5DF21C0B08A0026BBBE /* FunctionMethodsUtil.m in Sources */,
 				89D807FF21BFCD2500A6A31F /* UILabel+String.m in Sources */,
@@ -1588,6 +1625,7 @@
 				89D8068621BF44A500A6A31F /* AppDelegate.m in Sources */,
 				89DDD51021C0AD0D0026BBBE /* HomeController.m in Sources */,
 				89DDD5AE21C0B08A0026BBBE /* FilePathManager.m in Sources */,
+				89CA691B21C3527E00BC454A /* HomeReq.m in Sources */,
 				89DDD5DE21C0B08A0026BBBE /* NSDictionary+TYAFNetworking.m in Sources */,
 				89DDD4F521C0A9D00026BBBE /* ZSNotification.m in Sources */,
 				89DDD4E621C0A8880026BBBE /* UIImage+Alpha.m in Sources */,
@@ -1774,11 +1812,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GH8DJURR96;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Ypc/Tool/ThreeLibraries/Alipay",
 				);
 				INFOPLIST_FILE = Ypc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1795,11 +1835,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GH8DJURR96;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Ypc/Tool/ThreeLibraries/Alipay",
 				);
 				INFOPLIST_FILE = Ypc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -44,5 +44,29 @@
         
     }];
 }
-
+///banner列表
+-(void)getBannerListWithParam:(HomeReq *) req response:(responseModel) responseModel{
+    NSDictionary *dic = [req mj_keyValues];
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:banner_home Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+        if ([response.content isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dicResponse = (NSDictionary *) response.content;
+            if ([dicResponse[@"code"] integerValue] == 200) {
+                if (responseModel) {
+                    NSArray *result = [ZXBannerData mj_objectArrayWithKeyValuesArray:dicResponse[@"data"]];
+                    responseModel(result);
+                }
+            }else {
+                if (responseModel) {
+                    responseModel(nil);
+                }
+            }
+        } else {
+            if (responseModel) {
+                responseModel(nil);
+            }
+        }
+    } faildCallBack:^(ZSURLResponse *response) {
+        
+    }];
+}
 @end

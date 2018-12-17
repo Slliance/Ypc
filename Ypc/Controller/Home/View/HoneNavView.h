@@ -11,11 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HoneNavView : BaseView
+@property(nonatomic, assign) CGSize intrinsicContentSize;
 @property(nonatomic,strong)UIButton *locBtn;
 @property(nonatomic,strong)UIButton *searchBtn;
 @property(nonatomic,strong)UIButton *saoBtn;
 @property(nonatomic,strong)UIButton *messageBtn;
 @property(nonatomic,copy)void (^navBlock)(NSInteger);
+
+
 @end
 
 NS_ASSUME_NONNULL_END

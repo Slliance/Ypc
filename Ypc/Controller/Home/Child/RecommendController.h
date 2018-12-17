@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RecommendController : BaseViewController
+@property(nonatomic,assign)NSInteger index;
 
 @end
 
