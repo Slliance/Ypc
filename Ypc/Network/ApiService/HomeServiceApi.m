@@ -69,4 +69,154 @@
         
     }];
 }
+///热销列表
+-(void)getHotListWithParam:(HomeReq *) req response:(responseModel) responseModel{
+    NSDictionary *dic = [req mj_keyValues];
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:hot_list_home Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+        if ([response.content isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dicResponse = (NSDictionary *) response.content;
+            if ([dicResponse[@"code"] integerValue] == 200) {
+                if (responseModel) {
+                    NSArray *result = [ProductListModel mj_objectArrayWithKeyValuesArray:dicResponse[@"data"][@"list"]];
+                    responseModel(result);
+                }
+            }else {
+                if (responseModel) {
+                    responseModel(nil);
+                }
+            }
+        } else {
+            if (responseModel) {
+                responseModel(nil);
+            }
+        }
+    } faildCallBack:^(ZSURLResponse *response) {
+        
+    }];
+}
+///团购，预售
+-(void)getExtranceListWithParam:(HomeReq *) req response:(responseModel) responseModel{
+    NSDictionary *dic = [req mj_keyValues];
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:entrance_home Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+        if ([response.content isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dicResponse = (NSDictionary *) response.content;
+            if ([dicResponse[@"code"] integerValue] == 200) {
+                if (responseModel) {
+                    NSArray *result = [ZXBannerData mj_objectArrayWithKeyValuesArray:dicResponse[@"data"]];
+                    responseModel(result);
+                }
+            }else {
+                if (responseModel) {
+                    responseModel(nil);
+                }
+            }
+        } else {
+            if (responseModel) {
+                responseModel(nil);
+            }
+        }
+    } faildCallBack:^(ZSURLResponse *response) {
+        
+    }];
+}
+///获取默认门店
+-(void)getDefaultStoreWithParam:(HomeReq *) req response:(responseModel) responseModel{
+    NSDictionary *dic = [req mj_keyValues];
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:default_storeid Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+        if ([response.content isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dicResponse = (NSDictionary *) response.content;
+            if ([dicResponse[@"code"] integerValue] == 200) {
+                if (responseModel) {
+                    StoreAddressModel *result = [StoreAddressModel mj_objectWithKeyValues:dicResponse[@"data"][@"store"]];
+                    responseModel(result);
+                }
+            }else {
+                if (responseModel) {
+                    responseModel(nil);
+                }
+            }
+        } else {
+            if (responseModel) {
+                responseModel(nil);
+            }
+        }
+    } faildCallBack:^(ZSURLResponse *response) {
+        
+    }];
+}
+///爱尝鲜
+-(void)getLoveToTryWithParam:(HomeReq *) req response:(responseModel) responseModel{
+    NSDictionary *dic = [req mj_keyValues];
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:love_try_home Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+        if ([response.content isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dicResponse = (NSDictionary *) response.content;
+            if ([dicResponse[@"code"] integerValue] == 200) {
+                if (responseModel) {
+                    ZXBannerData *result = [ZXBannerData mj_objectWithKeyValues:dicResponse[@"data"]];
+                    responseModel(result);
+                }
+            }else {
+                if (responseModel) {
+                    responseModel(nil);
+                }
+            }
+        } else {
+            if (responseModel) {
+                responseModel(nil);
+            }
+        }
+    } faildCallBack:^(ZSURLResponse *response) {
+        
+    }];
+}
+///分类下商品
+-(void)getSubjectProductWithParam:(HomeReq *) req response:(responseModel) responseModel{
+    NSDictionary *dic = [req mj_keyValues];
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:subject_product Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+        if ([response.content isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dicResponse = (NSDictionary *) response.content;
+            if ([dicResponse[@"code"] integerValue] == 200) {
+                if (responseModel) {
+                    NSArray *result = [ProductListModel mj_objectArrayWithKeyValuesArray:dicResponse[@"data"][@"list"]];
+                    responseModel(result);
+                }
+            }else {
+                if (responseModel) {
+                    responseModel(nil);
+                }
+            }
+        } else {
+            if (responseModel) {
+                responseModel(nil);
+            }
+        }
+    } faildCallBack:^(ZSURLResponse *response) {
+        
+    }];
+}
+///分类主列表
+-(void)getSortMainListWithParam:(BaseModelReq *) req response:(responseModel) responseModel{
+    NSDictionary *dic = [req mj_keyValues];
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:sort_main_list Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+        if ([response.content isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dicResponse = (NSDictionary *) response.content;
+            if ([dicResponse[@"code"] integerValue] == 200) {
+                if (responseModel) {
+                    NSArray *result = [StairCategoryRes mj_objectArrayWithKeyValuesArray:dicResponse[@"data"][@"list"]];
+                    responseModel(result);
+                }
+            }else {
+                if (responseModel) {
+                    responseModel(nil);
+                }
+            }
+        } else {
+            if (responseModel) {
+                responseModel(nil);
+            }
+        }
+    } faildCallBack:^(ZSURLResponse *response) {
+        
+    }];
+}
 @end

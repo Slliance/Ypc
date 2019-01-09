@@ -41,7 +41,22 @@ _gs_cls = [cls new]; \
 }); \
 return _gs_cls; \
 } \
+/**
+*  自适应大小
+*/
+#define AUTOLAYOUTSIZE(size) (SCREENWIDTH / 375.0 * size)
+/**
+ *  弱引用
+ */
+#define WEAKSELF typeof(self) __weak weakSelf = self;
 
+#define TopStatuHeight        [[UIApplication sharedApplication] statusBarFrame].size.height
+// 适配iPhone x 底栏高度
+ #define TabbarHeight    ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
+// 适配iPhone x 导航高度
+#define NavitionbarHeight    ([[UIApplication sharedApplication] statusBarFrame].size.height>20?88:64)
+// 适配iPhone x 导航高度
+#define BottomSafebarHeight    ([[UIApplication sharedApplication] statusBarFrame].size.height>20?34:0)
 // 声明一个单例
 #define Create_Singleton_Def() + (instancetype)shared
 #import <Masonry.h>
@@ -55,6 +70,6 @@ return _gs_cls; \
 #import "UIButton+Style.h"
 #import "UserCacheBean.h"
 #import "ZSNotification.h"
-
+#import "UIView+VTUtility.h"
 
 #endif /* ZSConfig_h */

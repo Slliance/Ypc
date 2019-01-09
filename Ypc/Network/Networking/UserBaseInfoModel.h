@@ -17,6 +17,7 @@
 @property(nonatomic,strong)NSString *memberAvatarPath;
 @property(nonatomic,strong)NSString *memberMobile;
 @property(nonatomic,strong)NSString *openid;
+@property(nonatomic,strong)NSString *storeId;
 ///
 @property(nonatomic,strong)NSString *memberId;
 ///纬度

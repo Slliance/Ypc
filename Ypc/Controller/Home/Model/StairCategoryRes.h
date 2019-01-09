@@ -21,5 +21,7 @@
 ///
 @property(nonatomic,copy)NSString *productCategoryParentId;
 ///分类下商品
-@property(nonatomic,copy)NSArray *productCategoryParentPathArray;
+@property(nonatomic,strong)NSArray *productCategoryParentPathArray;
+///分类下商品
+@property(nonatomic,strong)NSArray *productCategoryList;
 @end

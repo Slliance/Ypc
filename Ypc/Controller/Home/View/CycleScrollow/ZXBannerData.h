@@ -17,5 +17,9 @@
 @property (nonatomic,copy) NSString* subjectTitle;
 @property (nonatomic,copy) NSString* subjectId;
 @property (nonatomic,copy) NSString* subjectName;
+@property (nonatomic,copy) NSString*subjectTopImagePath;
+@property (nonatomic,assign) BOOL subjectIsOpen;
+@property (nonatomic,strong) NSArray*subjectProductList;
+@property (nonatomic,copy) NSString* subjectTopImageId;
 
 @end

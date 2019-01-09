@@ -32,7 +32,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self adjustNavigationUI:self.navigationController];
 }
 - (void)viewDidLoad {
@@ -56,14 +56,14 @@
 - (void)adjustNavigationUI:(UINavigationController *) nav {
     [[UINavigationBar appearance] setTranslucent:YES];
     [[UINavigationBar appearance] setBarTintColor:DEFAULTColor];
-    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"icon_back"]];
     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"icon_back"]];
     NSShadow *shadow = [[NSShadow alloc] init];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           DSColorFromHex(0x474747), NSForegroundColorAttributeName,
+                                                           [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
-                                                           [UIFont systemFontOfSize:18], NSFontAttributeName, nil]];
+                                                           [UIFont systemFontOfSize:16], NSFontAttributeName, nil]];
     //去掉返回按钮上的字
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0)
                                                          forBarMetrics:UIBarMetricsDefault];

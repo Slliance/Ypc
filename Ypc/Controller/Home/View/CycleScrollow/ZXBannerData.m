@@ -9,6 +9,11 @@
 #import "ZXBannerData.h"
 
 @implementation ZXBannerData
-
++ (NSDictionary *)mj_objectClassInArray {
+    
+    return @{
+             @"subjectProductList" : @"ProductListModel",
+             };
+}
 
 @end

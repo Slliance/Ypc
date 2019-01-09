@@ -26,4 +26,6 @@
 @property(nonatomic,copy)NSString *storeId;
 @property(nonatomic,copy)NSString *cityName;
 @property(nonatomic,copy)NSString *cityId;
+@property(nonatomic,copy)NSString *userLatitude;
+@property(nonatomic,copy)NSString *userLongitude;
 @end

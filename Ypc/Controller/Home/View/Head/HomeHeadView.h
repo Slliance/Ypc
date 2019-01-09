@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeHeadView : BaseView
 @property(nonatomic,strong)UIView *bgView;
 @property(nonatomic,strong)ZXBannerView *bannerView;
+@property(nonatomic,strong)UILabel *lineLabel;
 
 @end
 

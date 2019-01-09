@@ -13,8 +13,27 @@
 
 ///分类列表
 #define sort_list      @"/ypc/product/category/mobile/v1/list/index"
-///首页banner
+///首页banner/专题
 #define banner_home   @"/ypc/subject/mobile/v1/list"
+///预售，团购，众筹
+#define entrance_home   @"/ypc/subject/mobile/v1/list/index/entrance"
+///热销
+#define hot_list_home   @"/ypc/product/mobile/v1/product/recommend/list"
+///爱尝鲜
+#define love_try_home   @"/ypc/subject/mobile/v1/find"
+///默认门店id
+#define default_storeid  @"/ypc/store/mobile/v1/find/def/recent/store"
+///分类下商品
+#define subject_product  @"/ypc/product/mobile/v1/list"
+///分类主页列表
+#define sort_main_list   @"/ypc/product/category/mobile/v1/list"
+
+
+///圈子分类
+#define circle_sort_list   @"/ypc/topic/category/mobile/v1/list"
+///圈子分类下列表
+#define circle_list   @"/ypc/topic/mobile/v1/listbytopiccategoryid"
+
 
 typedef void(^responseModel)(id response);
 @interface BaseApi : NSObject

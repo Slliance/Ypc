@@ -32,6 +32,7 @@
               @"thoroughfare":@"thoroughfare",
               @"address":@"address",
              @"memberId":@"memberId",
+             @"storeId":@"storeId",
              };
 }
 
@@ -52,6 +53,7 @@
                           @"area" : self.area == nil?@"":self.area,
                           @"thoroughfare" : self.thoroughfare == nil?@"":self.thoroughfare,
                           @"address" : self.address == nil?@"":self.address,
+                           @"storeId" : self.storeId == nil?@"":self.storeId,
                           };
     return dic;
 }
@@ -70,6 +72,7 @@
     self.area = dic[@"area"];
     self.thoroughfare = dic[@"thoroughfare"];
     self.address = dic[@"address"];
+    self.storeId = dic[@"storeId"];
 }
 
 - (void)updateUserInfoModelWithDic:(NSDictionary *) dic {
@@ -86,6 +89,7 @@
     self.area = dic[@"area"];
     self.thoroughfare = dic[@"thoroughfare"];
     self.address = dic[@"address"];
+    self.storeId = dic[@"storeId"];
 }
 
 @end

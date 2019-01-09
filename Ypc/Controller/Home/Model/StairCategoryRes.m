@@ -12,7 +12,7 @@
 + (NSDictionary *)mj_objectClassInArray {
     
     return @{
-             @"productList" : @"StairCategoryListRes",
+             @"productCategoryList" : @"StairCategoryRes",
              };
 }
 @end

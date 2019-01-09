@@ -29,7 +29,7 @@
     [super viewDidLoad];
     self.dataArr = [[NSMutableArray alloc]init];
     [self.view addSubview:self.headView];
-    [self requestBannerData];
+    
 }
 -(void)requestBannerData{
     HomeReq *req = [[HomeReq alloc]init];
@@ -54,7 +54,7 @@
                       withPageIndicatorTintColor:[UIColor grayColor]
                withCurrentPageIndicatorTintColor:[UIColor whiteColor]
                                   withTouchBlock:^(id _Nullable data) {
-                                      ZXBannerData* bannerData = (ZXBannerData*)data;
+//                                      ZXBannerData* bannerData = (ZXBannerData*)data;
                                       
                 }];
         }
