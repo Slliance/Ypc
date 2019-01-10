@@ -26,7 +26,7 @@
                   moduleName = "Ypc"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dnaer7/Documents/%E5%85%AC%E5%8F%B8/Ypc/Ypc/Controller/Home/Child/RecommendController.m"
-                  timestampString = "568630712.73458"
+                  timestampString = "568776609.097571"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -41,7 +41,7 @@
                   moduleName = "Ypc"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dnaer7/Documents/%E5%85%AC%E5%8F%B8/Ypc/Ypc/Controller/Home/Child/RecommendController.m"
-                  timestampString = "568630712.735865"
+                  timestampString = "568776609.099376"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -56,7 +56,7 @@
                   moduleName = "Ypc"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dnaer7/Documents/%E5%85%AC%E5%8F%B8/Ypc/Ypc/Controller/Home/Child/RecommendController.m"
-                  timestampString = "568630712.737098"
+                  timestampString = "568776609.100976"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -137,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ypc/Controller/Circle/View/CircleListCell.m"
-            timestampString = "568632180.578143"
+            timestampString = "568776800.320305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "-setModel:"
             landmarkType = "7">
          </BreakpointContent>
@@ -149,16 +149,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ypc/Controller/Circle/CircleController.m"
-            timestampString = "568632180.578199"
+            timestampString = "568776800.320363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "-requestData:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,12 +169,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ypc/Controller/Circle/View/CircleListCell.m"
-            timestampString = "568632180.578521"
+            timestampString = "568776800.3206429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "+getHeight:"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-setModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,12 +185,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ypc/Controller/Circle/View/CircleListCell.m"
-            timestampString = "568632180.578564"
+            timestampString = "568776800.320686"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "+getHeight:"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-setModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

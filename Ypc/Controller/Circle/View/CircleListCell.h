@@ -15,7 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIImageView *headImage;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *contentLabel;
+@property (nonatomic, strong) UIImageView *memberImage;
 @property (nonatomic, strong)CircleListRes*model;
+
+@property (nonatomic, copy)void (^heightBlock)(CGFloat);
+
 +(CGFloat)getHeight:(CircleListRes*)model;
 
 @end

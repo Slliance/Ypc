@@ -49,6 +49,7 @@ return _gs_cls; \
  *  弱引用
  */
 #define WEAKSELF typeof(self) __weak weakSelf = self;
+#define STRONGSELF typeof(self) __strong strongSelf = self;
 
 #define TopStatuHeight        [[UIApplication sharedApplication] statusBarFrame].size.height
 // 适配iPhone x 底栏高度

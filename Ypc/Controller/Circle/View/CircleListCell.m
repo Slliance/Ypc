@@ -25,12 +25,39 @@
     }
     return _headImage;
 }
+-(UIImageView *)memberImage{
+    if (!_memberImage) {
+        _memberImage = [[UIImageView alloc] init];
+        [_memberImage.layer setMasksToBounds:YES];
+        [_memberImage.layer setCornerRadius:12];
+    }
+    return _memberImage;
+}
+-(UILabel *)contentLabel{
+    if (!_contentLabel) {
+        _contentLabel = [[UILabel alloc]init];
+        _contentLabel.font = [UIFont systemFontOfSize:15];
+        _contentLabel.textColor = DSColorFromHex(0x313131);
+        _contentLabel.numberOfLines = 3;
+        
+    }
+    return _contentLabel;
+}
+-(UILabel *)titleLabel{
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc]init];
+        _titleLabel.font = [UIFont systemFontOfSize:12];
+        _titleLabel.textColor = DSColorFromHex(0x313131);
+    }
+    return _titleLabel;
+}
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self.contentView addSubview:self.bgView];
         [self.bgView addSubview:self.headImage];
-        
-        
+        [self.bgView addSubview:self.contentLabel];
+        [self.bgView addSubview:self.memberImage];
+        [self.bgView addSubview:self.titleLabel];
     }
     return self;
 }
@@ -38,22 +65,44 @@
 -(void)setModel:(CircleListRes *)model{
     _model = model;
     NSString *url = [NSString stringWithFormat:@"%@%@",IMAGEHOST,model.topicImagePath];
-    WEAKSELF;
+    
+    self.contentLabel.text = model.topicContent;
+    self.titleLabel.text = model.memberNickname;
+    
+   [self.memberImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGEHOST,model.memberAvatarPath]]];
+    
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        WEAKSELF;
         weakSelf.headImage.frame = CGRectMake(0, 0, SCREENWIDTH/2-15, image.size.height*(SCREENWIDTH/2-15)/image.size.width);
+        weakSelf.contentLabel.frame = CGRectMake(10, self.headImage.ctBottom+10, SCREENWIDTH/2-35, [self.contentLabel getHeightLineWithString:model.topicContent withWidth:SCREENWIDTH/2-35 withFont:[UIFont systemFontOfSize:15] lineSpacing:3]);
+        weakSelf.memberImage.frame = CGRectMake(10, weakSelf.contentLabel.ctBottom+10, 24, 24);
+        weakSelf.titleLabel.frame = CGRectMake(weakSelf.memberImage.ctRight+5, weakSelf.contentLabel.ctBottom+10,[weakSelf.titleLabel sizeWithText:model.memberNickname font:[UIFont systemFontOfSize:12]].width , 24);
+        weakSelf.bgView.frame = CGRectMake(0, 0, SCREENWIDTH/2-15, weakSelf.memberImage.ctBottom+15);
+        STRONGSELF;
+        if (model.height>0) {
+            
+        }else{
+         if (strongSelf.heightBlock) {
+            self.heightBlock(weakSelf.bgView.ctBottom);
+         }
+        }
     }];
+    
+    
 }
 +(CGFloat)getHeight:(CircleListRes *)model{
-    CGFloat height = 100;
+    CGFloat height = 0;
     NSString *url = [NSString stringWithFormat:@"%@%@",IMAGEHOST,model.topicImagePath];
     
-    UIImageView *imageView = [[UIImageView alloc]init];
-    __block weakHeight = height;
-    [imageView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        weakHeight = weakHeight+ image.size.height*(SCREENWIDTH/2-15)/image.size.width;
+    UIImageView*image=[[UIImageView alloc]init];
+    __block typeof(height)weakheight = height;
+    [image sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            weakheight += image.size.height*(SCREENWIDTH/2-15)/image.size.width;
     }];
-
-   
-    return weakHeight;
+    UILabel *content = [[UILabel alloc]init];
+    weakheight+= 10+[content getHeightLineWithString:model.topicContent withWidth:SCREENWIDTH/2-35 withFont:[UIFont systemFontOfSize:15] lineSpacing:3];
+    weakheight+= 49;
+    return weakheight;
 }
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CircleListRes : NSObject
@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *memberNickname;
 ///
 @property(nonatomic,copy)NSString *memberId;
+///
+@property(nonatomic,assign)CGFloat height;
 
 @end
 

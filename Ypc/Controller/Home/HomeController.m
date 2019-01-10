@@ -87,8 +87,9 @@
     [self.view addSubview:self.navView];
     [self.view addSubview:self.selectorView];
     [self.view addSubview:self.collectionView];
-    [self requestDefaultStore];
+//    [self requestDefaultStore];
 }
+
 -(void)requestDefaultStore{
     HomeReq *req = [[HomeReq alloc]init];
     req.token = [UserCacheBean share].userInfo.token;
@@ -105,7 +106,7 @@
         req.userLatitude = @"0";
     }
     if ([UserCacheBean share].userInfo.longitude.length>0) {
-         req.userLatitude = [UserCacheBean share].userInfo.longitude;
+         req.userLongitude = [UserCacheBean share].userInfo.longitude;
     }else{
         req.userLongitude = @"0";
     }
@@ -287,7 +288,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
-   
+   [self requestDefaultStore];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
