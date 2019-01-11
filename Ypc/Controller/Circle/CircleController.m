@@ -11,12 +11,16 @@
 #import "CircleServiseApi.h"
 #import "CircleListCell.h"
 #import "LMHWaterFallLayout.h"
+#import "DNTabContainView.h"
+#import "ChildCircleController.h"
 
-@interface CircleController ()<UICollectionViewDataSource,ZSSortSelectorViewDelegate,LMHWaterFallLayoutDeleaget>
+@interface CircleController ()<ZSSortSelectorViewDelegate>
 @property(nonatomic,strong)CircleNavView *navView;
 @property(nonatomic,strong)NSMutableArray *sortArr;
 @property(nonatomic,strong)NSMutableArray *dataArr;
-@property (nonatomic, weak) UICollectionView * collectionView;
+@property(nonatomic,strong)NSMutableArray *controllersArr;
+@property (nonatomic, strong) DNTabContainView *tabContent;
+@property(nonatomic,assign)NSInteger index;
 
 @end
 
@@ -38,20 +42,44 @@
     return _navView;
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.navView];
+   
     self.sortArr  = [[NSMutableArray alloc]init];
     self.dataArr = [[NSMutableArray alloc]init];
-    [self setupLayoutAndCollectionView];
-    
+    self.controllersArr = [[NSMutableArray alloc]init];
+     [self setupView];
+     [self.view addSubview:self.navView];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-   [self requestSortList];
+   
 }
+- (void)setupView {
+    WEAKSELF;
+    _tabContent = [DNTabContainView new];
+    [self.tabContent setSwitchBlock:^(NSInteger index) {
+        [weakSelf.navView.selectorView setCurrentPage:index];
+    }];
+    [self.view addSubview:self.tabContent];
+    
+    [self.tabContent mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+}
+
+- (void)setControllers {
+    [self.controllersArr removeAllObjects];
+    
+    for (CircleCategaryRes*res in self.sortArr) {
+        if (res.topicCategoryName) {
+            ChildCircleController*vc = [[ChildCircleController alloc]init];
+            [self.controllersArr addObject:vc];
+        }
+    }
+    [self.tabContent configControllers:self.controllersArr parentController:self index:0];
+}
+
 -(void)requestSortList{
     HomeReq *req = [[HomeReq alloc]init];
     req.token = [UserCacheBean share].userInfo.token;
@@ -77,7 +105,8 @@
             [weakSelf.navView.selectorView setCurrentPage:0];
             CircleCategaryRes *model = [weakSelf.sortArr firstObject];
             [weakSelf requestData:model.topicCategoryId];
-             [weakSelf.collectionView reloadData];
+           
+            [self setControllers];
         }
     }];
 }
@@ -96,81 +125,29 @@
     WEAKSELF;
     [[CircleServiseApi share]getCircleListWithParam:req response:^(id response) {
         if (response) {
+            
             [weakSelf.dataArr removeAllObjects];
             [weakSelf.dataArr addObjectsFromArray:response];
-            [weakSelf.collectionView reloadData];
-           
+            [weakSelf.tabContent setTabIndex:self.index];
+            [weakSelf.controllersArr enumerateObjectsUsingBlock:^(ChildCircleController*vc, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (idx ==weakSelf.index) {
+                    if (vc.dataArr==0) {
+                         [vc setDataArr:response];
+                    }
+                   
+                }
+            }];
+            
         }
     }];
 }
 -(void)chooseButtonType:(NSInteger)type{
+     self.index = type;
     CircleCategaryRes *model = self.sortArr[type];
     [self requestData:model.topicCategoryId];
-}
-/**
- * 创建布局和collectionView
- */
-- (void)setupLayoutAndCollectionView{
-    
-    // 创建布局
-    LMHWaterFallLayout * waterFallLayout = [[LMHWaterFallLayout alloc]init];
-    waterFallLayout.delegate = self;
-    
-    // 创建collectionView
-    UICollectionView * collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, NavitionbarHeight, SCREENWIDTH, SCREENHEIGHT-NavitionbarHeight) collectionViewLayout:waterFallLayout];
-    collectionView.backgroundColor = DSColorFromHex(0xF0F0F0);
-    
-    collectionView.dataSource = self;
-    [self.view addSubview:collectionView];
-    // 注册
-    [collectionView registerClass:[CircleListCell class] forCellWithReuseIdentifier:NSStringFromClass([CircleListCell class])];
-    
-    self.collectionView = collectionView;
-}
-#pragma mark UICollectionViewDataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+   
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    
-    
-    return self.dataArr.count;
-}
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    CircleListCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CircleListCell class]) forIndexPath:indexPath];
-    if (self.dataArr.count>0) {
-        CircleListRes *model =self.dataArr[indexPath.item];
-        [cell setModel:model];
-        WEAKSELF;
 
-        [cell setHeightBlock:^(CGFloat height) {
-            model.height = height;
-            [weakSelf.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-        }];
-    }
-    return cell;
-}
-#pragma mark  - <LMHWaterFallLayoutDeleaget>
-- (CGFloat)waterFallLayout:(LMHWaterFallLayout *)waterFallLayout heightForItemAtIndexPath:(NSUInteger)indexPath itemWidth:(CGFloat)itemWidth{
-    
-    CircleListRes * model = self.dataArr[indexPath];
-    CGFloat height = itemWidth* model.height/(SCREENWIDTH/2-15);
-    return height;
-}
-
-- (CGFloat)rowMarginInWaterFallLayout:(LMHWaterFallLayout *)waterFallLayout{
-    
-    return 10;
-    
-}
-
-- (NSUInteger)columnCountInWaterFallLayout:(LMHWaterFallLayout *)waterFallLayout{
-    
-    return 2;
-    
-}
 @end

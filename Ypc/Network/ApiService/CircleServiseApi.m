@@ -47,7 +47,7 @@
 ///圈子分类列表
 -(void)getCircleListWithParam:(HomeReq *) req response:(responseModel) responseModel{
     NSDictionary *dic = [req mj_keyValues];
-    [[ZSAPIProxy shareProxy] callPOSTWithUrl:circle_list Params:dic isShowLoading:NO successCallBack:^(ZSURLResponse *response) {
+    [[ZSAPIProxy shareProxy] callPOSTWithUrl:circle_list Params:dic isShowLoading:YES successCallBack:^(ZSURLResponse *response) {
         if ([response.content isKindOfClass:[NSDictionary class]]) {
             NSDictionary *dicResponse = (NSDictionary *) response.content;
             if ([dicResponse[@"code"] integerValue] == 200) {

@@ -26,8 +26,7 @@
 #define DSNavi  DSColorFromHex(0x323232) //navigation的颜色
 
 #define DEFAULTColor DSColorAlphaFromHex(0x323232,1)// 主题色
-// 创建一个weak变量
-#define WEAKSELF __weak typeof(self) weakSelf = self;
+
 // 实现一个单例
 #define Create_Singleton_Imp(cls) \
 + (instancetype)shared \
@@ -48,6 +47,7 @@ return _gs_cls; \
 /**
  *  弱引用
  */
+
 #define WEAKSELF typeof(self) __weak weakSelf = self;
 #define STRONGSELF typeof(self) __strong strongSelf = self;
 
@@ -72,5 +72,6 @@ return _gs_cls; \
 #import "UserCacheBean.h"
 #import "ZSNotification.h"
 #import "UIView+VTUtility.h"
+#import "UIImage+Resize.h"
 
 #endif /* ZSConfig_h */

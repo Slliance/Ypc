@@ -15,6 +15,8 @@
 		8947FDC221DC9A4A006713CB /* HomeHotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8947FDC121DC9A4A006713CB /* HomeHotCell.m */; };
 		8947FDC521DCBB5D006713CB /* ProductListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8947FDC421DCBB5D006713CB /* ProductListModel.m */; };
 		8947FDC821DCCC96006713CB /* HomeActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8947FDC721DCCC96006713CB /* HomeActivityView.m */; };
+		898EF17821E750FD00147255 /* DNTabContainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 898EF17721E750FD00147255 /* DNTabContainView.m */; };
+		898EF17B21E7600900147255 /* ChildCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898EF17A21E7600900147255 /* ChildCircleController.m */; };
 		8991D3CD21E5E1DD001B6A09 /* LMHWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8991D3CB21E5E1DC001B6A09 /* LMHWaterFallLayout.m */; };
 		89A6DDD121E4351800F52398 /* HomeProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6DDD021E4351800F52398 /* HomeProductCell.m */; };
 		89A6DDD221E4440200F52398 /* SortController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DDD51521C0AD3B0026BBBE /* SortController.m */; };
@@ -292,6 +294,10 @@
 		8947FDC421DCBB5D006713CB /* ProductListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListModel.m; sourceTree = "<group>"; };
 		8947FDC621DCCC96006713CB /* HomeActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeActivityView.h; sourceTree = "<group>"; };
 		8947FDC721DCCC96006713CB /* HomeActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeActivityView.m; sourceTree = "<group>"; };
+		898EF17621E750FD00147255 /* DNTabContainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNTabContainView.h; sourceTree = "<group>"; };
+		898EF17721E750FD00147255 /* DNTabContainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTabContainView.m; sourceTree = "<group>"; };
+		898EF17921E7600900147255 /* ChildCircleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildCircleController.h; sourceTree = "<group>"; };
+		898EF17A21E7600900147255 /* ChildCircleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildCircleController.m; sourceTree = "<group>"; };
 		8991D3CB21E5E1DC001B6A09 /* LMHWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMHWaterFallLayout.m; sourceTree = "<group>"; };
 		8991D3CC21E5E1DC001B6A09 /* LMHWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMHWaterFallLayout.h; sourceTree = "<group>"; };
 		89A6DDCF21E4351800F52398 /* HomeProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeProductCell.h; sourceTree = "<group>"; };
@@ -1108,16 +1114,16 @@
 		89DDD4CB21C0A8870026BBBE /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				89DDD4CC21C0A8870026BBBE /* AgentImageBaseModel.m */,
-				89DDD4CD21C0A8870026BBBE /* UIImage+RTStyle.h */,
-				89DDD4CE21C0A8870026BBBE /* UIImage+RoundedCorner.h */,
-				89DDD4CF21C0A8870026BBBE /* UIImage+Resize.h */,
-				89DDD4D021C0A8870026BBBE /* UIImage+Alpha.h */,
-				89DDD4D121C0A8870026BBBE /* UIImage+RTStyle.m */,
 				89DDD4D221C0A8870026BBBE /* AgentImageBaseModel.h */,
+				89DDD4CC21C0A8870026BBBE /* AgentImageBaseModel.m */,
+				89DDD4D021C0A8870026BBBE /* UIImage+Alpha.h */,
 				89DDD4D321C0A8870026BBBE /* UIImage+Alpha.m */,
-				89DDD4D421C0A8870026BBBE /* UIImage+RoundedCorner.m */,
+				89DDD4CF21C0A8870026BBBE /* UIImage+Resize.h */,
 				89DDD4D521C0A8870026BBBE /* UIImage+Resize.m */,
+				89DDD4CE21C0A8870026BBBE /* UIImage+RoundedCorner.h */,
+				89DDD4D421C0A8870026BBBE /* UIImage+RoundedCorner.m */,
+				89DDD4CD21C0A8870026BBBE /* UIImage+RTStyle.h */,
+				89DDD4D121C0A8870026BBBE /* UIImage+RTStyle.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -1162,6 +1168,8 @@
 				89DDD4F721C0ABBF0026BBBE /* PsfTabBarItem.m */,
 				89DDD4FA21C0ABE70026BBBE /* BaseTabBarController.h */,
 				89DDD4FB21C0ABE70026BBBE /* BaseTabBarController.m */,
+				898EF17621E750FD00147255 /* DNTabContainView.h */,
+				898EF17721E750FD00147255 /* DNTabContainView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1213,6 +1221,8 @@
 				89A6DDF521E47C1F00F52398 /* View */,
 				89DDD51A21C0AD590026BBBE /* CircleController.h */,
 				89DDD51B21C0AD590026BBBE /* CircleController.m */,
+				898EF17921E7600900147255 /* ChildCircleController.h */,
+				898EF17A21E7600900147255 /* ChildCircleController.m */,
 			);
 			path = Circle;
 			sourceTree = "<group>";
@@ -1739,6 +1749,7 @@
 				89BE8B9121E35CF000616921 /* HomeLoveTrysCell.m in Sources */,
 				89DDD5AD21C0B08A0026BBBE /* NSString+MoneyStyle.m in Sources */,
 				89DDD5DA21C0B08A0026BBBE /* BaseModelReq.m in Sources */,
+				898EF17B21E7600900147255 /* ChildCircleController.m in Sources */,
 				89A6DDFF21E47E7500F52398 /* CircleCategaryRes.m in Sources */,
 				89DDD5AC21C0B08A0026BBBE /* UserCurrentLocationManager.m in Sources */,
 				89D807EF21BFCD1500A6A31F /* EmojiButtonView.m in Sources */,
@@ -1823,6 +1834,7 @@
 				89DDD5B421C0B08A0026BBBE /* NSString+Cache.m in Sources */,
 				89BE8B8B21E350C000616921 /* HomeLoveTryView.m in Sources */,
 				89D807ED21BFCD1500A6A31F /* EmojiCollectionViewCell.m in Sources */,
+				898EF17821E750FD00147255 /* DNTabContainView.m in Sources */,
 				89DDD5B221C0B08A0026BBBE /* CLImageModel.m in Sources */,
 				89DDD50D21C0ACDA0026BBBE /* BaseTableViewCell.m in Sources */,
 				89DDD4EB21C0A8880026BBBE /* UIView+CTExtensions.m in Sources */,
