@@ -14,6 +14,7 @@
 #import "ZXBannerData.h"
 #import "ProductListModel.h"
 #import "StoreAddressModel.h"
+#import "GourmentListRes.h"
 
 @interface HomeServiceApi : BaseApi
 + (instancetype)share;
@@ -33,6 +34,11 @@
 -(void)getSubjectProductWithParam:(HomeReq *) req response:(responseModel) responseModel;
 ///分类主列表
 -(void)getSortMainListWithParam:(BaseModelReq *) req response:(responseModel) responseModel;
-
+///专题详情
+-(void)getTopicDetailWithParam:(HomeReq *) req response:(responseModel) responseModel;
+///美食家列表
+-(void)getGourmentListWithParam:(HomeReq *) req response:(responseModel) responseModel;
+///美食家详情
+-(void)getGourmentDetailWithParam:(HomeReq *) req response:(responseModel) responseModel;
 
 @end

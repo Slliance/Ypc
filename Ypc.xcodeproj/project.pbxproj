@@ -31,9 +31,15 @@
 		89A6DDFF21E47E7500F52398 /* CircleCategaryRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6DDFE21E47E7500F52398 /* CircleCategaryRes.m */; };
 		89A6DE0221E4845F00F52398 /* CircleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6DE0121E4845F00F52398 /* CircleListCell.m */; };
 		89A6DE5C21E48A8100F52398 /* CircleListRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6DE5B21E48A8100F52398 /* CircleListRes.m */; };
+		89A89D2A2212C0BD0060AA05 /* GourmetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A89D292212C0BD0060AA05 /* GourmetController.m */; };
+		89A89D2E2212C58D0060AA05 /* GourmetListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A89D2D2212C58D0060AA05 /* GourmetListCell.m */; };
+		89A89D322212C8940060AA05 /* GourmentListRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A89D312212C8940060AA05 /* GourmentListRes.m */; };
 		89BE8B8821E3313500616921 /* StoreAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BE8B8721E3313500616921 /* StoreAddressModel.m */; };
 		89BE8B8B21E350C000616921 /* HomeLoveTryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BE8B8A21E350C000616921 /* HomeLoveTryView.m */; };
 		89BE8B9121E35CF000616921 /* HomeLoveTrysCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BE8B9021E35CF000616921 /* HomeLoveTrysCell.m */; };
+		89C73C3C2213B12A00961AA5 /* GourmetDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C73C3B2213B12A00961AA5 /* GourmetDetailController.m */; };
+		89C73C3F2213BCDF00961AA5 /* GourmetDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C73C3E2213BCDF00961AA5 /* GourmetDetailTopView.m */; };
+		89C73C432213BDDE00961AA5 /* DNAButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C73C422213BDDE00961AA5 /* DNAButton.m */; };
 		89CA690E21C34A5E00BC454A /* HomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA690D21C34A5E00BC454A /* HomeHeadView.m */; };
 		89CA691621C3501A00BC454A /* ZXBannerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA691121C3501A00BC454A /* ZXBannerImageView.m */; };
 		89CA691721C3501A00BC454A /* ZXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA691221C3501A00BC454A /* ZXBannerView.m */; };
@@ -324,12 +330,24 @@
 		89A6DE0121E4845F00F52398 /* CircleListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleListCell.m; sourceTree = "<group>"; };
 		89A6DE5A21E48A8100F52398 /* CircleListRes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleListRes.h; sourceTree = "<group>"; };
 		89A6DE5B21E48A8100F52398 /* CircleListRes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleListRes.m; sourceTree = "<group>"; };
+		89A89D282212C0BD0060AA05 /* GourmetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GourmetController.h; sourceTree = "<group>"; };
+		89A89D292212C0BD0060AA05 /* GourmetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GourmetController.m; sourceTree = "<group>"; };
+		89A89D2C2212C58D0060AA05 /* GourmetListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GourmetListCell.h; sourceTree = "<group>"; };
+		89A89D2D2212C58D0060AA05 /* GourmetListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GourmetListCell.m; sourceTree = "<group>"; };
+		89A89D302212C8940060AA05 /* GourmentListRes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GourmentListRes.h; sourceTree = "<group>"; };
+		89A89D312212C8940060AA05 /* GourmentListRes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GourmentListRes.m; sourceTree = "<group>"; };
 		89BE8B8621E3313500616921 /* StoreAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreAddressModel.h; sourceTree = "<group>"; };
 		89BE8B8721E3313500616921 /* StoreAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreAddressModel.m; sourceTree = "<group>"; };
 		89BE8B8921E350C000616921 /* HomeLoveTryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeLoveTryView.h; sourceTree = "<group>"; };
 		89BE8B8A21E350C000616921 /* HomeLoveTryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeLoveTryView.m; sourceTree = "<group>"; };
 		89BE8B8F21E35CF000616921 /* HomeLoveTrysCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeLoveTrysCell.h; sourceTree = "<group>"; };
 		89BE8B9021E35CF000616921 /* HomeLoveTrysCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeLoveTrysCell.m; sourceTree = "<group>"; };
+		89C73C3A2213B12A00961AA5 /* GourmetDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GourmetDetailController.h; sourceTree = "<group>"; };
+		89C73C3B2213B12A00961AA5 /* GourmetDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GourmetDetailController.m; sourceTree = "<group>"; };
+		89C73C3D2213BCDF00961AA5 /* GourmetDetailTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GourmetDetailTopView.h; sourceTree = "<group>"; };
+		89C73C3E2213BCDF00961AA5 /* GourmetDetailTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GourmetDetailTopView.m; sourceTree = "<group>"; };
+		89C73C412213BDDE00961AA5 /* DNAButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAButton.h; sourceTree = "<group>"; };
+		89C73C422213BDDE00961AA5 /* DNAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAButton.m; sourceTree = "<group>"; };
 		89CA690C21C34A5E00BC454A /* HomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeadView.h; sourceTree = "<group>"; };
 		89CA690D21C34A5E00BC454A /* HomeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeadView.m; sourceTree = "<group>"; };
 		89CA691021C3501900BC454A /* ZXBannerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXBannerImageView.h; sourceTree = "<group>"; };
@@ -757,6 +775,48 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		89A89D272212C0950060AA05 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				89A89D2F2212C8660060AA05 /* model */,
+				89A89D2B2212C5630060AA05 /* view */,
+				89A89D282212C0BD0060AA05 /* GourmetController.h */,
+				89A89D292212C0BD0060AA05 /* GourmetController.m */,
+				89C73C3A2213B12A00961AA5 /* GourmetDetailController.h */,
+				89C73C3B2213B12A00961AA5 /* GourmetDetailController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		89A89D2B2212C5630060AA05 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				89A89D2C2212C58D0060AA05 /* GourmetListCell.h */,
+				89A89D2D2212C58D0060AA05 /* GourmetListCell.m */,
+				89C73C3D2213BCDF00961AA5 /* GourmetDetailTopView.h */,
+				89C73C3E2213BCDF00961AA5 /* GourmetDetailTopView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		89A89D2F2212C8660060AA05 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				89A89D302212C8940060AA05 /* GourmentListRes.h */,
+				89A89D312212C8940060AA05 /* GourmentListRes.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		89C73C402213BDC000961AA5 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				89C73C412213BDDE00961AA5 /* DNAButton.h */,
+				89C73C422213BDDE00961AA5 /* DNAButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		89CA690F21C34FF400BC454A /* CycleScrollow */ = {
 			isa = PBXGroup;
 			children = (
@@ -835,6 +895,7 @@
 		89D806B921BFCC6500A6A31F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				89C73C402213BDC000961AA5 /* Button */,
 				89DDD5E021C121DC0026BBBE /* ThreeLibraries */,
 				89D806C021BFCD1500A6A31F /* KeyBoard */,
 				89D806BD21BFCD1500A6A31F /* UITextView */,
@@ -1186,6 +1247,7 @@
 		89DDD4FE21C0AC180026BBBE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				89A89D272212C0950060AA05 /* Detail */,
 				89EF696521C261A4007F74D0 /* Model */,
 				89EF695E21C25962007F74D0 /* Child */,
 				89EF695D21C25953007F74D0 /* View */,
@@ -1733,6 +1795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A6DDFB21E47D9C00F52398 /* CircleServiseApi.m in Sources */,
+				89A89D2E2212C58D0060AA05 /* GourmetListCell.m in Sources */,
 				89DDD50B21C0ACDA0026BBBE /* BaseView.m in Sources */,
 				89DDD4E521C0A8880026BBBE /* UIImage+RTStyle.m in Sources */,
 				89DDD5AF21C0B08A0026BBBE /* DeviceModel.m in Sources */,
@@ -1752,6 +1815,7 @@
 				898EF17B21E7600900147255 /* ChildCircleController.m in Sources */,
 				89A6DDFF21E47E7500F52398 /* CircleCategaryRes.m in Sources */,
 				89DDD5AC21C0B08A0026BBBE /* UserCurrentLocationManager.m in Sources */,
+				89C73C3F2213BCDF00961AA5 /* GourmetDetailTopView.m in Sources */,
 				89D807EF21BFCD1500A6A31F /* EmojiButtonView.m in Sources */,
 				89A6DE0221E4845F00F52398 /* CircleListCell.m in Sources */,
 				89DDD51321C0AD1D0026BBBE /* MineController.m in Sources */,
@@ -1778,7 +1842,9 @@
 				89CA691821C3501A00BC454A /* ZXBannerData.m in Sources */,
 				89DDD5D821C0B08A0026BBBE /* HomeServiceApi.m in Sources */,
 				8947FDC221DC9A4A006713CB /* HomeHotCell.m in Sources */,
+				89C73C432213BDDE00961AA5 /* DNAButton.m in Sources */,
 				89A6DDE221E4445A00F52398 /* SortCollectHeadView.m in Sources */,
+				89C73C3C2213B12A00961AA5 /* GourmetDetailController.m in Sources */,
 				89EF696121C259CB007F74D0 /* RecommendController.m in Sources */,
 				89DDD4E721C0A8880026BBBE /* UIImage+RoundedCorner.m in Sources */,
 				89D807EE21BFCD1500A6A31F /* UITextView+Category.m in Sources */,
@@ -1789,12 +1855,14 @@
 				89DDD5DC21C0B08A0026BBBE /* NSArray+TYAFNetworking.m in Sources */,
 				89D807FE21BFCD2500A6A31F /* UIColor+VmExt.m in Sources */,
 				89CA690E21C34A5E00BC454A /* HomeHeadView.m in Sources */,
+				89A89D2A2212C0BD0060AA05 /* GourmetController.m in Sources */,
 				89D807F321BFCD1500A6A31F /* IMEmotionEntity.m in Sources */,
 				89A6DDF821E47C3800F52398 /* CircleNavView.m in Sources */,
 				89CA691721C3501A00BC454A /* ZXBannerView.m in Sources */,
 				89DDD4E921C0A8880026BBBE /* UIDevice+IdentifierAddition.m in Sources */,
 				89DDD5DF21C0B08A0026BBBE /* FunctionMethodsUtil.m in Sources */,
 				89D807FF21BFCD2500A6A31F /* UILabel+String.m in Sources */,
+				89A89D322212C8940060AA05 /* GourmentListRes.m in Sources */,
 				89DDD5A921C0B08A0026BBBE /* ZSAPIProxy.m in Sources */,
 				89D807F121BFCD1500A6A31F /* UIView+Extension.m in Sources */,
 				89DDD4B921C0A86B0026BBBE /* CreatQRCodeAndBarCodeFromLeon.m in Sources */,

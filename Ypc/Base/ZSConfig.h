@@ -12,8 +12,8 @@
 #define SUPPLIERAPIKEY @"ShhAppApiKey"
 //#define DPHOST @"http://192.168.1.107:8088"// 测试环境
 //#define DPHOST @"http://47.101.159.106:8088"// 测试环境
-#define DPHOST  @"https://www.qimozxy.top"  //线上
-#define IMAGEHOST  @"https://www.qimozxy.top"//图片地址
+#define DPHOST  @"https://www.1pcome.com"  //线上
+#define IMAGEHOST  @"https://www.1pcome.com"//图片地址
 
 /**屏幕尺寸*/
 #define SCREENWIDTH [[UIScreen mainScreen] bounds].size.width
@@ -73,5 +73,6 @@ return _gs_cls; \
 #import "ZSNotification.h"
 #import "UIView+VTUtility.h"
 #import "UIImage+Resize.h"
+#import "DNAButton.h"
 
 #endif /* ZSConfig_h */

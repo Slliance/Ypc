@@ -65,33 +65,46 @@
 -(void)setModel:(CircleListRes *)model{
     _model = model;
     NSString *url = [NSString stringWithFormat:@"%@%@",IMAGEHOST,model.topicImagePath];
-    
+     [self.memberImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGEHOST,model.memberAvatarPath]]];
     self.contentLabel.text = model.topicContent;
     self.titleLabel.text = model.memberNickname;
-    
-   [self.memberImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGEHOST,model.memberAvatarPath]]];
-    
-    [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        WEAKSELF;
-        weakSelf.headImage.frame = CGRectMake(0, 0, SCREENWIDTH/2-15, image.size.height*(SCREENWIDTH/2-15)/image.size.width);
-        
-        
+    if (model.topicImagePath.length>0) {
+        [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            WEAKSELF;
+            weakSelf.headImage.frame = CGRectMake(0, 0, SCREENWIDTH/2-15, image.size.height*(SCREENWIDTH/2-15)/image.size.width);
+            if ([self.contentLabel getHeightLineWithString:model.topicContent withWidth:SCREENWIDTH/2-35 withFont:[UIFont systemFontOfSize:15] lineSpacing:3]>55) {
+                weakSelf.contentLabel.frame = CGRectMake(10, self.headImage.ctBottom+10, SCREENWIDTH/2-35, 55);
+            }else{
+                weakSelf.contentLabel.frame = CGRectMake(10, self.headImage.ctBottom+10, SCREENWIDTH/2-35, [self.contentLabel getHeightLineWithString:model.topicContent withWidth:SCREENWIDTH/2-35 withFont:[UIFont systemFontOfSize:15] lineSpacing:3]);
+            }
+            weakSelf.memberImage.frame = CGRectMake(10, weakSelf.contentLabel.ctBottom+10, 24, 24);
+            weakSelf.titleLabel.frame = CGRectMake(weakSelf.memberImage.ctRight+5, weakSelf.contentLabel.ctBottom+10,[weakSelf.titleLabel sizeWithText:model.memberNickname font:[UIFont systemFontOfSize:12]].width , 24);
+            weakSelf.bgView.frame = CGRectMake(0, 0, SCREENWIDTH/2-15, weakSelf.memberImage.ctBottom+15);
+            if (model.height>0) {
+                
+            }else{
+                if (weakSelf.heightBlock) {
+                    weakSelf.heightBlock(weakSelf.bgView.ctBottom);
+                }
+            }
+        }];
+    }else{
         if ([self.contentLabel getHeightLineWithString:model.topicContent withWidth:SCREENWIDTH/2-35 withFont:[UIFont systemFontOfSize:15] lineSpacing:3]>55) {
-            weakSelf.contentLabel.frame = CGRectMake(10, self.headImage.ctBottom+10, SCREENWIDTH/2-35, 55);
+            self.contentLabel.frame = CGRectMake(10, 10, SCREENWIDTH/2-35, 55);
         }else{
-            weakSelf.contentLabel.frame = CGRectMake(10, self.headImage.ctBottom+10, SCREENWIDTH/2-35, [self.contentLabel getHeightLineWithString:model.topicContent withWidth:SCREENWIDTH/2-35 withFont:[UIFont systemFontOfSize:15] lineSpacing:3]);
+            self.contentLabel.frame = CGRectMake(10, 10, SCREENWIDTH/2-35, [self.contentLabel getHeightLineWithString:model.topicContent withWidth:SCREENWIDTH/2-35 withFont:[UIFont systemFontOfSize:15] lineSpacing:3]);
         }
-        weakSelf.memberImage.frame = CGRectMake(10, weakSelf.contentLabel.ctBottom+10, 24, 24);
-        weakSelf.titleLabel.frame = CGRectMake(weakSelf.memberImage.ctRight+5, weakSelf.contentLabel.ctBottom+10,[weakSelf.titleLabel sizeWithText:model.memberNickname font:[UIFont systemFontOfSize:12]].width , 24);
-        weakSelf.bgView.frame = CGRectMake(0, 0, SCREENWIDTH/2-15, weakSelf.memberImage.ctBottom+15);
-        if (model.height>0) {
-            
-        }else{
-         if (weakSelf.heightBlock) {
-            weakSelf.heightBlock(weakSelf.bgView.ctBottom);
-         }
-        }
-    }];
+        self.memberImage.frame = CGRectMake(10, self.contentLabel.ctBottom+10, 24, 24);
+        self.titleLabel.frame = CGRectMake(self.memberImage.ctRight+5, self.contentLabel.ctBottom+10,[self.titleLabel sizeWithText:model.memberNickname font:[UIFont systemFontOfSize:12]].width , 24);
+        self.bgView.frame = CGRectMake(0, 0, SCREENWIDTH/2-15, self.memberImage.ctBottom+15);
+       
+            if (self.heightBlock) {
+                self.heightBlock(self.bgView.ctBottom);
+            }
+    }
+  
+    
+    
     
     
 }

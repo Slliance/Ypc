@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIView *bgView;
 @property(nonatomic,strong)ZXBannerView *bannerView;
 @property(nonatomic,strong)UILabel *lineLabel;
+@property(nonatomic,copy)void (^selectedBlock)(NSInteger);
+
 
 @end
 

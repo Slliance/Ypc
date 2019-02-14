@@ -22,4 +22,5 @@
 @property (nonatomic,strong) NSArray*subjectProductList;
 @property (nonatomic,copy) NSString* subjectTopImageId;
 
+
 @end

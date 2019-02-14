@@ -20,8 +20,8 @@
 #import "HomeLoveTryView.h"
 #import "HomeLoveTrysCell.h"
 #import "HomeProductCell.h"
-
 #import "HomeServiceApi.h"
+#import "GourmetController.h"
 
 @interface HomeController ()<ZSSortSelectorViewDelegate,UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -408,6 +408,22 @@
         if (indexPath.section ==0) {
             HomeHeadView*headView =  [[HomeHeadView alloc]initWithFrame:CGRectMake(0,0, SCREENWIDTH, 115+200*(SCREENWIDTH-30)/345)];
             [headerView addSubview:headView];
+            WEAKSELF;
+            [headView setSelectedBlock:^(NSInteger index) {
+                if (index ==0) {
+                    
+                }else if (index ==1){
+                    GourmetController*vc = [[GourmetController alloc]init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [weakSelf.navigationController pushViewController:vc animated:YES];
+                }else if (index ==2){
+                    
+                }else if (index ==3){
+                    
+                }else if (index ==4){
+                    
+                }
+            }];
             if (self.dataArr.count>0) {
                 [headView.bannerView setImagesWithBannerDatas:self.dataArr
                                              withRollInterval:100

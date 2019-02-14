@@ -52,6 +52,8 @@
         btn.titleLabel.font = [UIFont systemFontOfSize:12];
         [btn setTitleColor:DSColorFromHex(0x323232) forState:UIControlStateNormal];
         [btn setIconInTopWithSpacing:3];
+        btn.tag = i;
+        [btn addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
     }
     [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -59,5 +61,9 @@
         make.bottom.equalTo(self).offset(-0.5);
         make.height.mas_equalTo(0.5);
     }];
+}
+
+-(void)pressBtn:(UIButton*)sender{
+    self.selectedBlock(sender.tag);
 }
 @end

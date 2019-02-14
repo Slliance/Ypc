@@ -10,7 +10,7 @@
 #import "WXApi.h"
 //#import <AlipaySDK/AlipaySDK.h>
 #import "UserCacheBean.h"
-
+#import "ZSConfig.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "ZSNotification.h"
@@ -38,9 +38,18 @@
     [ZSNotification addRefreshLocationResultNotification:self action:@selector(refreshloc)];
     [UserCacheBean share].userInfo.latitude = @"0";
     [UserCacheBean share].userInfo.longitude = @"0";
+    [self setNav];
     return YES;
 }
-
+-(void)setNav{
+    UINavigationBar *navBar = [UINavigationBar appearance];
+    navBar.barTintColor = DSColorFromHex(0x323232);
+    NSDictionary *dict = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    [navBar setTitleTextAttributes:dict];
+    [navBar setBackIndicatorImage:[UIImage imageNamed:@"icon_back"]];
+    [navBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"icon_back"]];
+    
+}
 -(void)refreshloc{
     [self.locationManagers startUpdatingLocation];
 }

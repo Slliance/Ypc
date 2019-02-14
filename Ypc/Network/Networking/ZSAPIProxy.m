@@ -179,7 +179,12 @@ typedef NS_ENUM(NSInteger, NetworkRequestType) {
     }
     NSURLSessionDataTask * sessionTask;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
+    // 客户端是否信任非法证书
+    securityPolicy.allowInvalidCertificates = YES;
+    // 是否在证书域字段中验证域名
+    securityPolicy.validatesDomainName = NO;
+    manager.securityPolicy = securityPolicy;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     ///入参转json格式
      manager.requestSerializer = [AFJSONRequestSerializer serializer];

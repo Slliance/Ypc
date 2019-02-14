@@ -21,10 +21,8 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        
         self.view.backgroundColor = [UIColor whiteColor];
         
-        [self adjustNavigationUI:self.navigationController];
     }
     return self;
 }
@@ -33,7 +31,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self adjustNavigationUI:self.navigationController];
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,44 +40,21 @@
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     //添加当前类对象为一个观察者，name和object设置为nil，表示接收一切通知
 //    [center addObserver:self selector:@selector(loginOutSelector) name:LogOutNotificationCenter object:nil];
-    
-    
+   
+    [self adjustNavigationUI:self.navigationController];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self adjustNavigationUI:self.navigationController];
-    [self setLeftButtonWithIcon:[UIImage imageNamed:@"icon_back"]];
-//    self.navigationController.navigationBar.translucent = YES;
+    
 }
 
 - (void)adjustNavigationUI:(UINavigationController *) nav {
-    [[UINavigationBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setBarTintColor:DEFAULTColor];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"icon_back"]];
-    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"icon_back"]];
-    NSShadow *shadow = [[NSShadow alloc] init];
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor whiteColor], NSForegroundColorAttributeName,
-                                                           shadow, NSShadowAttributeName,
-                                                           [UIFont systemFontOfSize:16], NSFontAttributeName, nil]];
-    //去掉返回按钮上的字
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0)
-                                                         forBarMetrics:UIBarMetricsDefault];
-    [UIBarButtonItem appearance].tintColor = [UIColor lightGrayColor];
-    NSArray *viewControllerArray = [self.navigationController viewControllers];
-    long previousViewControllerIndex = [viewControllerArray indexOfObject:self] - 1;
-    UIViewController *previous;
-    if (previousViewControllerIndex >= 0&&previousViewControllerIndex<= viewControllerArray.count) {
-        previous            = [viewControllerArray objectAtIndex:previousViewControllerIndex];
-        previous.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
-                                                     initWithTitle:@" "
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
+                                                     initWithTitle:@""
                                                      style:UIBarButtonItemStylePlain
                                                  target:self
                                                      action:nil];
-    }
-//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
 }
 
@@ -118,13 +93,13 @@
     [rightBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateNormal];
     [rightBar setTitlePositionAdjustment:UIOffsetMake(-10, 0) forBarMetrics:UIBarMetricsDefault];
     [self.navigationItem setRightBarButtonItem:rightBar];
-    [self adjustNavigationUI:self.navigationController];
+    
 }
 
 - (void)setRightButtonWithIcon:(UIImage *) image {
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(didRightClick)];
     [self.navigationItem setRightBarButtonItem:rightBar];
-    [self adjustNavigationUI:self.navigationController];
+    
     
 }
 
@@ -132,7 +107,7 @@
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(didLeftClick)];
     [self.navigationItem setLeftBarButtonItem:leftBar];
     [leftBar setTintColor:[UIColor lightGrayColor]];
-    [self adjustNavigationUI:self.navigationController];
+    
 }
 
 - (void)setLeftButtonWithTitle:(NSString *) title  {
@@ -141,7 +116,7 @@
     [leftBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateNormal];
     [leftBar setTitlePositionAdjustment:UIOffsetMake(10, 0) forBarMetrics:UIBarMetricsDefault];
     [self.navigationItem setLeftBarButtonItem:leftBar];
-    [self adjustNavigationUI:self.navigationController];
+   
 }
 
 - (void)didRightClick {

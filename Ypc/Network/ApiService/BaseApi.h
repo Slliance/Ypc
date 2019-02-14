@@ -15,6 +15,8 @@
 #define sort_list      @"/ypc/product/category/mobile/v1/list/index"
 ///首页banner/专题
 #define banner_home   @"/ypc/subject/mobile/v1/list"
+///专题详情
+#define topic_detail  @"/ypc/subject/mobile/v1/find"
 ///预售，团购，众筹
 #define entrance_home   @"/ypc/subject/mobile/v1/list/index/entrance"
 ///热销
@@ -27,6 +29,13 @@
 #define subject_product  @"/ypc/product/mobile/v1/list"
 ///分类主页列表
 #define sort_main_list   @"/ypc/product/category/mobile/v1/list"
+///美食家列表
+#define gourment_list    @"/ypc/epicure/mobile/v1/list"
+///美食家详情
+#define gourment_detail    @"/ypc/epicure/admin/v1/detail"
+
+
+
 
 
 ///圈子分类

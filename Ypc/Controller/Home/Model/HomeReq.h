@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *productCategoryId;
 ///
 @property(nonatomic,copy)NSString *topicCategoryId;
-
+///
+@property(nonatomic,copy)NSString *epicureId;
 
 @end
 
